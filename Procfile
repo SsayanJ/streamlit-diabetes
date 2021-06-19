@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run serving/model_as_service/streamlit/front_end.py
