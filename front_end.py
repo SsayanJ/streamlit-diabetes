@@ -49,7 +49,7 @@ st.title("Diabetes prediction tool")
 
 config_button = st.button(label="Show model configuration")
 if config_button:
-    res = requests.get('https:/https://fastapi-diabetes.herokuapp.com/model_config')
+    res = requests.get('https://fastapi-diabetes.herokuapp.com/model_config')
     res_dict = ast.literal_eval(res.text)
     st.markdown(print_config(res_dict))
 
@@ -84,7 +84,7 @@ with st.form(key="predict_form"):
 
 if submit_button:
     m = {k: inputs[k] for k in DEFAULT_VALUES.keys()}
-    res = requests.post('https:/https://fastapi-diabetes.herokuapp.com/predict', data=json.dumps(m))
+    res = requests.post('https://fastapi-diabetes.herokuapp.com/predict', data=json.dumps(m))
     st.markdown(f"### Model prediction {float(res.text):.2f}")
 
 """
@@ -110,7 +110,7 @@ if st.button('Predict Diabete evolution'):
     if csv_file:
         # does not work because I need to use the full inference pipeline
         predictions = requests.post(
-            'https:/https://fastapi-diabetes.herokuapp.com/predict_obj', data=diabetes_data_json)
+            'https://fastapi-diabetes.herokuapp.com/predict_obj', data=diabetes_data_json)
         st.write(
             f"The CSV file had {nb_rejected_rows} with missing data, {nb_valid_rows}\
                 patients data have been processed properly")
