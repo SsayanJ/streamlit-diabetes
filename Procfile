@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run serving/model_as_service/streamlit/front_end.py
+web: sh setup.sh && streamlit run front_end.py
